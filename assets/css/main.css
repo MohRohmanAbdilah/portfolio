@@ -2066,15 +2066,35 @@ input, select, textarea {
 		}
 .tools-inline { display:block; margin-bottom:.6rem; }
 .tool-chip {
-  display:inline-block;
-  padding: .25rem .5rem;
-  margin-right:.4rem;
-  background:#f0f4ff;
-  color:#0b3b7a;
-  border-radius: .45rem;
-  font-size:.82rem;
-  border:1px solid rgba(11,116,222,0.08);
+  display: inline-block;
+  padding: .15rem .35rem;   /* lebih kecil */
+  margin-right: .3rem;
+  background: #f0f4ff;
+  color: #0b3b7a;
+  border-radius: .3rem;     /* biar tidak terlalu besar bulatannya */
+  font-size: .7rem;         /* lebih kecil dari .82rem */
+  border: 1px solid rgba(11,116,222,0.08);
 }
+.skills {
+  margin: 1em 0;
+}
+
+.skill-chip {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 4px;
+  font-size: 0.85rem;   /* biar proporsional */
+  border: 1px solid rgba(21, 101, 192, 0.15); /* tambah sedikit border halus */
+}
+.skill-chip:hover {
+  background: #bbdefb;
+  cursor: default;
+}
+
+
 .biru {
   display: inline-block;
   background: linear-gradient(135deg, #2196F3, #1565C0);

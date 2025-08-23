@@ -98,7 +98,7 @@ body, input, select, textarea {
 a {
   transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color:#4facfe;
+  color: #49bf9d;
   text-decoration: none;
 }
 a:hover {
@@ -1444,7 +1444,7 @@ input[type=password]:focus,
 input[type=email]:focus,
 select:focus,
 textarea:focus {
-  border-color: #4facfe;
+  border-color: #49bf9d;
 }
 
 select {
@@ -1540,7 +1540,7 @@ input[type=radio]:checked + label:before {
 }
 input[type=checkbox]:focus + label:before,
 input[type=radio]:focus + label:before {
-  border-color:#4facfe;
+  border-color: #49bf9d;
 }
 
 input[type=checkbox] + label:before {
@@ -1962,16 +1962,16 @@ input[type=submit]:hover,
 input[type=reset]:hover,
 input[type=button]:hover,
 .button:hover {
-  border-color: #4facfe;
-  color: #4facfe !important;
+  border-color: #49bf9d;
+  color: #49bf9d !important;
 }
 input[type=submit]:active,
 input[type=reset]:active,
 input[type=button]:active,
 .button:active {
   background-color: rgba(73, 191, 157, 0.1);
-  border-color: #4facfe;
-  color: #4facfe !important;
+  border-color: #49bf9d;
+  color: #49bf9d !important;
 }
 input[type=submit].icon,
 input[type=reset].icon,
@@ -2008,8 +2008,8 @@ input[type=submit].primary,
 input[type=reset].primary,
 input[type=button].primary,
 .button.primary {
-  background-color: #4facfe;
-  border-color:#4facfe;
+  background-color: #49bf9d;
+  border-color: #49bf9d;
   color: #ffffff !important;
 }
 input[type=submit].primary:hover,
@@ -2071,7 +2071,7 @@ input[type=button]:disabled,
   justify-content: space-between;
   background-color: #1f1815;
   background-attachment: scroll, scroll;
-  background-image: url("images/overlay.png"), url("../../images/h.jpg");
+  background-image: url("images/overlay.png"), url("../../images/bg.jpg");
   background-position: top left, top left;
   background-repeat: repeat, no-repeat;
   background-size: auto, 150%;
