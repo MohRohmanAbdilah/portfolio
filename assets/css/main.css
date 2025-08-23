@@ -2037,6 +2037,7 @@ input, select, textarea {
 
 /* Image */
 
+
 	.image {
 		border-radius: 0.35em;
 		border: 0;
@@ -2064,35 +2065,43 @@ input, select, textarea {
 		.image.thumb {
 			text-align: center;
 		}
-.tools-inline { display:block; margin-bottom:.6rem; }
-.tool-chip {
-  display: inline-block;
-  padding: .15rem .35rem;   /* lebih kecil */
-  margin-right: .3rem;
-  background: #f0f4ff;
-  color: #0b3b7a;
-  border-radius: .3rem;     /* biar tidak terlalu besar bulatannya */
-  font-size: .7rem;         /* lebih kecil dari .82rem */
-  border: 1px solid rgba(11,116,222,0.08);
+.tool-chip-container {
+  display: flex;
+  flex-wrap: wrap;       /* agar chip turun ke baris baru */
+  gap: 0.3rem;           /* jarak antar chip */
 }
+
+.tool-chip { display: inline-block; padding: .15rem .35rem; /* lebih kecil */ margin-right: .3rem; background: #f0f4ff; color: #0b3b7a; border-radius: .3rem; /* biar tidak terlalu besar bulatannya */ font-size: .7rem; /* lebih kecil dari .82rem */ border: 1px solid rgba(11,116,222,0.08); }
 .skills {
   margin: 1em 0;
 }
 
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;   /* supaya responsif */
+    gap: 8px;          /* jarak antar chip */
+    margin-top: 1rem;
+}
+
 .skill-chip {
-  display: inline-block;
-  background: #e3f2fd;
-  color: #1565c0;
-  padding: 6px 12px;
-  border-radius: 20px;
-  margin: 4px;
-  font-size: 0.85rem;   /* biar proporsional */
-  border: 1px solid rgba(21, 101, 192, 0.15); /* tambah sedikit border halus */
+    display: inline-block;
+    background: #e3f2fd;         /* biru lembut */
+    color: #1565c0;              /* teks biru gelap */
+    padding: 6px 12px;
+    border-radius: 8px;          /* lebih sedikit membulat */
+    border: 1px solid rgba(21, 101, 192, 0.15);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;   /* animasi smooth */
 }
+
 .skill-chip:hover {
-  background: #bbdefb;
-  cursor: default;
+    background: #bbdefb;         /* biru terang saat hover */
+    cursor: default;
 }
+
+
 
 
 .biru {
