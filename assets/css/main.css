@@ -2075,6 +2075,10 @@ input, select, textarea {
 .skills {
   margin: 1em 0;
 }
+.tool-chip {
+  display: inline-block;
+  margin: 0 0.3rem 0.3rem 0; /* kasih margin bawah */
+}
 
 
 .skills {
