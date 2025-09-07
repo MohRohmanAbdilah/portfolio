@@ -2055,6 +2055,23 @@ input[type=button]:disabled,
   line-height: 1.5em;
   margin: 0;
 }
+.work-item {
+    display: flex;
+    flex-direction: column;       /* susun vertikal */
+    justify-content: space-between; /* tombol dorong ke bawah */
+    height: 450px;                /* tinggi kartu sama */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.work-item p {
+    min-height: 100px; /* tinggi minimal paragraf */
+    line-height: 1.5;  /* jarak antar baris */
+}
+.actions-wrapper {
+    margin-top: auto; /* dorong tombol ke bawah, tapi tetap respect <br> */
+}
 
 /* Header */
 #header {
