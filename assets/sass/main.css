@@ -2088,7 +2088,7 @@ input[type=button]:disabled,
   justify-content: space-between;
   background-color: #1f1815;
   background-attachment: scroll, scroll;
-  background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+  background-image: url("images/overlay.png"), url("../../images/background_profile.jpg");
   background-position: top left, top left;
   background-repeat: repeat, no-repeat;
   background-size: auto, 150%;
@@ -2430,12 +2430,11 @@ body.is-touch .poptrox-popup .closer {
   }
   #header h1 br {
     display: inline;
-  }
-  /* Footer */
+  }/*foter 
   #footer {
     background-attachment: scroll;
     background-color: #1f1815;
-    background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+    background-image: url("images/overlay.png"), url("../../images/background_profile.jpg");
     background-position: top left, bottom center;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -2445,7 +2444,7 @@ body.is-touch .poptrox-popup .closer {
     position: relative;
     text-align: center;
     width: 100%;
-  }
+  }*/
   #footer .icons {
     margin: 0 0 1em 0;
   }
