@@ -289,19 +289,40 @@ input, select, textarea {
 			}
 
 		}
-/* league*/
+.language-switcher {
+    position: fixed; /* Supaya tombol tetap muncul saat scroll */
+    top: 20px; /* Jarak dari atas */
+    right: 20px; /* Jarak dari kanan */
+    background: rgba(255, 255, 255, 0.9); /* Transparan sedikit */
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Efek shadow */
+    z-index: 9999; /* Pastikan tombol di atas semua elemen */
+}
+
 .language-switcher button {
-    padding: 5px 10px;
-    margin: 0 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
     cursor: pointer;
-    border: 1px solid #333;
-    background-color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
+
 .language-switcher button:hover {
-    background-color: #f0f0f0;
+    background: #0056b3;
+    transform: scale(1.05);
 }
+
+.language-switcher button:active {
+    transform: scale(0.95);
+}
+
 
 /* Row */
 

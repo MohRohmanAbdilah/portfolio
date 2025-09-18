@@ -360,7 +360,7 @@
 						</li>
 						<li>
 							<h3 class="icon solid fa-envelope"><span class="label" target="_blank">Email</span></h3>
-							<a href="mailto:rohmanabdila06@gmail.com">rohman.career@gmail.com</a>
+							<a href="mailto:rohman.career@gmail.com">rohman.career@gmail.com</a>
 						</li>
 					</ul>
 				</div>
@@ -695,7 +695,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						target="_blank"><span class="label">LinkedIn</span></a></li>
 				<li><a href="https://github.com/MohRohmanAbdilah" class="icon brands fa-github" target="_blank"><span
 							class="label">Github</span></a></li>
-				<li><a href="mailto:rohmanabdila06@gmail.com" class="icon solid fa-envelope" target="_blank"><span
+				<li><a href="mailto:rohman.career@gmail.com" class="icon solid fa-envelope" target="_blank"><span
 							class="label">Email</span></a></li>
 			</ul>
 			<ul class="copyright">
@@ -778,6 +778,39 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			}
 		});
 	</script>
+	<script>
+function setLanguage(lang) {
+    const elements = document.querySelectorAll('.lang');
+    elements.forEach(el => {
+        if (el.tagName === "INPUT" && el.type === "submit") {
+            el.value = el.dataset[lang];
+        } else {
+            el.innerHTML = el.dataset[lang];
+        }
+    });
+
+    // Placeholder form
+    const inputs = document.querySelectorAll('.lang-input');
+    inputs.forEach(input => {
+        input.placeholder = input.dataset[lang];
+    });
+
+    // Simpan preferensi bahasa
+    localStorage.setItem('lang', lang);
+
+    // Update tombol aktif
+    document.querySelectorAll('.language-switcher button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`.language-switcher button[onclick="setLanguage('${lang}')"]`).classList.add('active');
+}
+
+window.onload = () => {
+    const lang = localStorage.getItem('lang') || 'en';
+    setLanguage(lang);
+};
+</script>
+
 </body>
 
 </html>
