@@ -717,96 +717,45 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-	<script>
-		function setLanguage(lang) {
-			const elements = document.querySelectorAll('.lang');
-			elements.forEach(el => {
-				el.innerHTML = el.dataset[lang]; // gunakan innerHTML karena ada <br> dan <strong>
-			});
-			localStorage.setItem('lang', lang); // simpan pilihan
-		}
-
-		// Set bahasa saat halaman dimuat
-		window.onload = () => {
-			const lang = localStorage.getItem('lang') || 'en';
-			setLanguage(lang);
-		};
-	</script>
-	<script>
-		function setPlaceholders(lang) {
-			const inputs = document.querySelectorAll('.lang-input');
-			inputs.forEach(input => {
-				input.placeholder = input.dataset[lang];
-			});
-		}
-
-		function setLanguage(lang) {
-			// Ganti teks elemen biasa
-			const elements = document.querySelectorAll('.lang');
-			elements.forEach(el => {
-				el.innerHTML = el.dataset[lang];
-			});
-
-			// Ganti placeholder input
-			setPlaceholders(lang);
-
-			// Ganti teks hover di gambar/project
-			document.querySelectorAll('.image.thumb').forEach(img => {
-				img.setAttribute('data-lang', lang);
-				img.setAttribute('data-content', (lang === 'id') ? 'Lihat' : 'View');
-			});
-
-			// Simpan pilihan bahasa di localStorage
-			localStorage.setItem('lang', lang);
-		}
-
-		// Set bahasa saat halaman dimuat
-		window.onload = () => {
-			const lang = localStorage.getItem('lang') || 'en';
-			setLanguage(lang);
-		};
-	</script>
-
-
-	<script>
-		document.querySelectorAll('.image.thumb').forEach(img => {
-			const lang = img.getAttribute('data-lang');
-			if (lang === 'id') {
-				img.setAttribute('data-content', 'Lihat');
-			} else if (lang === 'en') {
-				img.setAttribute('data-content', 'View Project');
-			}
-		});
-	</script>
-	<script>
+<script>
 function setLanguage(lang) {
+    // 1. Update semua elemen teks biasa
     const elements = document.querySelectorAll('.lang');
     elements.forEach(el => {
         if (el.tagName === "INPUT" && el.type === "submit") {
+            // Jika element adalah <input type="submit">
             el.value = el.dataset[lang];
         } else {
             el.innerHTML = el.dataset[lang];
         }
     });
 
-    // Placeholder form
+    // 2. Update placeholder pada input form
     const inputs = document.querySelectorAll('.lang-input');
     inputs.forEach(input => {
         input.placeholder = input.dataset[lang];
     });
 
-    // Simpan preferensi bahasa
+    // 3. Update teks hover di project/gambar
+    document.querySelectorAll('.image.thumb').forEach(img => {
+        img.setAttribute('data-lang', lang);
+        img.setAttribute('data-content', lang === 'id' ? 'Lihat' : 'View Project');
+    });
+
+    // 4. Simpan preferensi bahasa ke localStorage
     localStorage.setItem('lang', lang);
 
-    // Update tombol aktif
+    // 5. Update tombol bahasa agar terlihat aktif
     document.querySelectorAll('.language-switcher button').forEach(btn => {
         btn.classList.remove('active');
     });
-    document.querySelector(`.language-switcher button[onclick="setLanguage('${lang}')"]`).classList.add('active');
+    const activeBtn = document.querySelector(`.language-switcher button[onclick="setLanguage('${lang}')"]`);
+    if (activeBtn) activeBtn.classList.add('active');
 }
 
+// Saat halaman dimuat, gunakan bahasa terakhir yang dipilih
 window.onload = () => {
-    const lang = localStorage.getItem('lang') || 'en';
+    const lang = localStorage.getItem('lang') || 'en'; // default EN
     setLanguage(lang);
 };
 </script>
