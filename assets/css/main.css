@@ -290,38 +290,41 @@ input, select, textarea {
 
 		}
 .language-switcher {
-    position: fixed; /* Supaya tombol tetap muncul saat scroll */
-    top: 20px; /* Jarak dari atas */
-    right: 20px; /* Jarak dari kanan */
-    background: rgba(255, 255, 255, 0.9); /* Transparan sedikit */
-    padding: 8px 12px;
+    position: fixed;       /* Selalu terlihat saat scroll */
+    top: 15px;             /* Jarak dari atas */
+    left: 15px;            /* Jarak dari kiri */
+    z-index: 9999;         /* Supaya tidak tertutup elemen lain */
+    background: rgba(255, 255, 255, 0.9); /* Background semi transparan */
+    padding: 6px 10px;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     display: flex;
-    gap: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Efek shadow */
-    z-index: 9999; /* Pastikan tombol di atas semua elemen */
+    gap: 8px;              /* Jarak antar tombol */
 }
 
 .language-switcher button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 6px 12px;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .language-switcher button:hover {
-    background: #0056b3;
-    transform: scale(1.05);
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
 }
 
-.language-switcher button:active {
-    transform: scale(0.95);
+.language-switcher button.active {
+    background: #007bff;
+    color: white;
+    border: 1px solid #0056b3;
+    font-weight: bold;
 }
+
 
 
 /* Row */
