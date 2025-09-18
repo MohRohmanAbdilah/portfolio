@@ -20,7 +20,7 @@
 	<header id="header">
 		<div class="inner">
 			<a href="#" class="image avatar">
-				<img src="images/gambar_hodie_1.png" alt="Avatar Moh Rohman Abdilah"/>
+				<img src="images/gambar_hodie_1.png" alt="Avatar Moh Rohman Abdilah" />
 			</a>
 			<h1 class="lang" data-id="Hai! <br />Saya <strong>Moh Rohman Abdilah</strong>"
 				data-en="Hi! <br />I am <strong>Moh Rohman Abdilah</strong>">
@@ -68,7 +68,7 @@
 
 			<ul class="actions">
 				<li>
-					<a href="#two" class="button lang" data-id="Lihat Resume" data-en="View Resume">
+					<a href="https://github.com/MohRohmanAbdilah/MohRohmanAbdilah/blob/main/Moh-Rohman-Abdilah_CV_2025.pdf" class="button lang" data-id="Lihat Resume" data-en="View Resume" target="_blank">
 						View Resume
 					</a>
 				</li>
@@ -79,7 +79,8 @@
 
 		<!-- Two -->
 		<section id="two">
-			<h2>Portofolio</h2>
+			<h2 class="lang" data-id="Portofolio" data-en="Portfolio">Portofolio</h2>
+
 			<div class="row">
 				<!-- Projek 1 SQL -->
 				<article class="col-6 col-12-xsmall work-item">
@@ -120,6 +121,7 @@
 				</article>
 
 				<!-- Projek 2 Python -->
+
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/fulls/retail_sales.png" class="image fit thumb">
 						<img src="images/thumbs/retail_sales.png" alt="Retail Sales Analysis" />
@@ -192,7 +194,7 @@
 					</ul>
 				</article>
 				<!-- Projek 4 PowerBI-->
-				 <!--
+				<!--
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/fulls/online.retail.png" class="image fit thumb">
 						<img src="images/thumbs/online.retail.png" alt="Online Retail Data Analysis" />
@@ -228,7 +230,7 @@
 				</article>
 				-->
 				<!-- Projek 5-->
-  				
+
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/fulls/pbi.plate.co.png" class="image fit thumb">
 						<img src="images/thumbs/pbi.plate.co.png" alt="Plant Sales Performance Dashboard" />
@@ -344,17 +346,21 @@
 				<div class="col-4 col-12-small">
 					<ul class="labeled-icons">
 						<li>
-							<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-							Gresik, Jawa Timur<br />
-							Indonesia
+							<h3 class="icon solid fa-home">
+								<span class="label">Address</span>
+							</h3>
+							<span class="lang" data-id="Gresik, Jawa Timur" data-en="Gresik, East Java">Gresik, Jawa
+								Timur</span><br />
+							<span class="lang" data-id="Indonesia" data-en="Indonesia">Indonesia</span>
 						</li>
+
 						<li>
 							<h3 class="icon brands fa-whatsapp"><span class="label" target="_blank">WhatsApp</span></h3>
 							<a href="https://wa.me/6285604082152">+62 856-0408-2152</a>
 						</li>
 						<li>
 							<h3 class="icon solid fa-envelope"><span class="label" target="_blank">Email</span></h3>
-							<a href="mailto:rohmanabdila06@gmail.com">rohmanabdila06@gmail.com</a>
+							<a href="mailto:rohmanabdila06@gmail.com">rohman.career@gmail.com</a>
 						</li>
 					</ul>
 				</div>
@@ -747,7 +753,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			// Ganti teks hover di gambar/project
 			document.querySelectorAll('.image.thumb').forEach(img => {
 				img.setAttribute('data-lang', lang);
-				img.setAttribute('data-content', (lang === 'id') ? 'Lihat' : 'View Project');
+				img.setAttribute('data-content', (lang === 'id') ? 'Lihat' : 'View');
 			});
 
 			// Simpan pilihan bahasa di localStorage
