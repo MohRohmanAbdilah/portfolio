@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<htm lang="en">
+<html>
 
 <head>
 	<title>Moh Rohman Abdilah Portfolio</title>
@@ -722,47 +722,46 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-	<script>
-		function setLanguage(lang) {
-			// 1. Update semua elemen teks biasa
-			const elements = document.querySelectorAll('.lang');
-			elements.forEach(el => {
-				if (el.tagName === "INPUT" && el.type === "submit") {
-					// Jika element adalah <input type="submit">
-					el.value = el.dataset[lang];
-				} else {
-					el.innerHTML = el.dataset[lang];
-				}
-			});
+<script>
+  function setLanguage(lang) {
+    // 1️⃣ Ubah atribut <html lang="...">
+    document.documentElement.setAttribute("lang", lang);
 
-			// 2. Update placeholder pada input form
-			const inputs = document.querySelectorAll('.lang-input');
-			inputs.forEach(input => {
-				input.placeholder = input.dataset[lang];
-			});
+    // 2️⃣ Update semua elemen teks biasa
+    document.querySelectorAll('.lang').forEach(el => {
+      // Kalau tombol submit (input type="submit")
+      if (el.tagName === "INPUT" && el.type === "submit") {
+        el.value = el.dataset[lang];
+      } else {
+        el.innerHTML = el.dataset[lang];
+      }
+    });
 
-			// 3. Update teks hover di project/gambar
-			document.querySelectorAll('.image.thumb').forEach(img => {
-				img.setAttribute('data-lang', lang);
-				img.setAttribute('data-content', lang === 'id' ? 'Lihat' : 'View Project');
-			});
+    // 3️⃣ Update placeholder pada input dan textarea
+    document.querySelectorAll('.lang-input').forEach(input => {
+      if (input.dataset[lang]) input.placeholder = input.dataset[lang];
+    });
 
-			// 4. Simpan preferensi bahasa ke localStorage
-			localStorage.setItem('lang', lang);
+    // 4️⃣ Update teks hover di project/gambar
+    document.querySelectorAll('.image.thumb').forEach(img => {
+      img.setAttribute('data-lang', lang);
+      img.setAttribute('data-content', lang === 'id' ? 'Lihat' : 'View Project');
+    });
 
-			// 5. Update tombol bahasa agar terlihat aktif
-			document.querySelectorAll('.language-switcher button').forEach(btn => {
-				btn.classList.remove('active');
-			});
-			const activeBtn = document.querySelector(`.language-switcher button[onclick="setLanguage('${lang}')"]`);
-			if (activeBtn) activeBtn.classList.add('active');
-		}
+    // 5️⃣ Update tombol bahasa agar terlihat aktif
+    document.querySelectorAll('.language-switcher button').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    const activeBtn = document.querySelector(`.language-switcher button[onclick="setLanguage('${lang}')"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+  }
 
-		// Saat halaman dimuat, gunakan bahasa terakhir yang dipilih
-		window.onload = () => {
-			const lang = localStorage.getItem('lang') || 'en'; // default EN
-			setLanguage(lang);
-		};
+  // 6️⃣ Saat halaman dimuat, pakai default bahasa Inggris
+  window.onload = () => {
+    setLanguage('en');
+  };
+</script>
+
 	</script>
 <!-- Tambahkan script EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
