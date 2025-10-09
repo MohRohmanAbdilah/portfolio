@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<htm lang="en">
 
 <head>
 	<title>Moh Rohman Abdilah Portfolio</title>
@@ -317,19 +317,19 @@
 
 			<div class="row">
 				<div class="col-8 col-12-small">
-					<form method="post" action="https://getform.io/f/arondzqb">
+					<form id="contact-form">
 						<div class="row gtr-uniform gtr-50">
 							<div class="col-6 col-12-xsmall">
-								<input type="text" name="nama" id="nama" class="lang-input" data-id="Nama"
-									data-en="Name" placeholder="Name" />
+								<input type="text" name="from_name" id="nama" class="lang-input" data-id="Nama"
+									data-en="Name" placeholder="Name" required />
 							</div>
 							<div class="col-6 col-12-xsmall">
-								<input type="email" name="email" id="email" class="lang-input" data-id="Email"
-									data-en="Email" placeholder="Email" />
+								<input type="email" name="from_email" id="email" class="lang-input" data-id="Email"
+									data-en="Email" placeholder="Email" required />
 							</div>
 							<div class="col-12">
-								<textarea name="pesan" id="pesan" class="lang-input" data-id="Pesan" data-en="Message"
-									placeholder="Message" rows="4"></textarea>
+								<textarea name="message" id="pesan" class="lang-input" data-id="Pesan" data-en="Message"
+									placeholder="Message" rows="4" required></textarea>
 							</div>
 							<div class="col-12">
 								<ul class="actions" style="margin-top: 1rem;">
@@ -341,6 +341,9 @@
 							</div>
 						</div>
 					</form>
+
+
+
 				</div>
 
 
@@ -761,6 +764,44 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			setLanguage(lang);
 		};
 	</script>
+<!-- Tambahkan script EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  // Inisialisasi EmailJS
+  emailjs.init("sucrsbkkYc3pRVa2Q"); // Public Key kamu dari EmailJS
+
+  // Tangani pengiriman form
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Supaya tidak reload
+
+    // Cek bahasa aktif dari tag <html lang="...">
+    const currentLang = document.documentElement.getAttribute("lang") || "en";
+
+    // Pesan alert dua bahasa
+    const messages = {
+      success: {
+        id: "✅ Pesan berhasil dikirim! Terima kasih sudah menghubungi saya.",
+        en: "✅ Message sent successfully! Thank you for contacting me."
+      },
+      error: {
+        id: "❌ Gagal mengirim pesan. Silakan coba lagi nanti.",
+        en: "❌ Failed to send message. Please try again later."
+      }
+    };
+
+    // Kirim form via EmailJS
+    emailjs.sendForm("service_luqzv1c", "template_228z11s", this)
+      .then(() => {
+        alert(messages.success[currentLang]);
+        this.reset(); // Kosongkan form setelah sukses
+      })
+      .catch((error) => {
+        alert(messages.error[currentLang] + "\n" + JSON.stringify(error));
+      });
+  });
+</script>
+
 
 </body>
 
