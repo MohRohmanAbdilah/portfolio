@@ -21,6 +21,41 @@
   object-fit: cover;
   object-position: top;
 }
+/* Data Analyst Portfolio Hover */
+/* IMAGE THUMB – CLEAN DATA ANALYST */
+.image.thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.35em;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+/* Overlay tipis (tanpa ikon, tanpa teks) */
+.image.thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.03);
+  pointer-events: none;
+}
+
+/* Image */
+.image.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+/* Hover sangat halus */
+.image.thumb:hover img {
+  transform: scale(1.015);
+}
+
+
+
 
 
 html, body, div, span, applet, object,
@@ -6546,4 +6581,17 @@ input, select, textarea {
 				padding-left: 0;
 			}
 
-	}
+	}/* REMOVE STRATA OVERLAY ICON */
+/* CLEAN OVERLAY – DATA ANALYST SAFE */
+/* REMOVE STRATA ICON, KEEP CLEAN OVERLAY */
+.image::before,
+.image.thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.03); /* overlay tipis */
+  background-image: none !important;   /* LOGO DIHAPUS */
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
